@@ -1,8 +1,8 @@
-kubectl delete ns easytrade
-kubectl create namespace easytrade
-kubectl -n easytrade apply -f ./deployment
+# kubectl delete ns easytrade
+# kubectl create namespace easytrade
+# kubectl -n easytrade apply -f ./deployment
 
-kubectl rollout status deployment -n easytrade --timeout=300s
+# kubectl rollout status deployment -n easytrade --timeout=300s
 
 kubectl create namespace log-generator
 
