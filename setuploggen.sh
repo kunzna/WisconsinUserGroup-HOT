@@ -7,3 +7,5 @@ kubectl apply -f LogGenerator.yaml -n log-generator
 kubectl rollout status deployment log-generator -n log-generator --timeout=90s
 
 kubectl logs -f -n log-generator -l app=log-generator
+
+kubectl delete pods --all -n easytrade
