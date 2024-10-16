@@ -1,6 +1,6 @@
 kubectl create namespace log-generator
 
-cd /home/dtu_training/WisconsinUserGroup-HOT
+# cd /home/dtu_training/WisconsinUserGroup-HOT
 
 kubectl apply -f LogGenerator.yaml -n log-generator
 
