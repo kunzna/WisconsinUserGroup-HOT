@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+  labels:
+    owner: team-platform
+spec:
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+        owner: team-platform
+    spec:
+      containers:
+        - name: rabbitmq
+          image: gcr.io/dynatrace-demoability/easytrade/rabbitmq:151f288
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+          env: []
+          resources:
+            requests:
+              cpu: 100m
+              memory: 150Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+spec:
+  type: ClusterIP
+  selector:
+    app: rabbitmq
+  ports:
+    - name: rabbitmq-listener
+      port: 5672
+      targetPort: 5672
+    - name: rabbitmq-ui
+      port: 15672
+      targetPort: 15672
