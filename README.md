@@ -11,4 +11,5 @@ sh ./setuploggen.sh
 # Variables
 
 DT_URL:  https://{YOUR_TENANT_ID}.live.dynatrace.com
+
 DT_LOG_INGEST_TOKEN:  {YOUR_DT_LOG_INGEST_TOKEN}
