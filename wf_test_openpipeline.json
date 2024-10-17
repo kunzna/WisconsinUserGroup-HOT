@@ -1,0 +1,94 @@
+{
+  "id": "3dc315c9-77e1-4a6f-b7b5-00172a28aebc",
+  "title": "test openpipeline random",
+  "tasks": {
+    "run_javascript_1": {
+      "name": "run_javascript_1",
+      "action": "dynatrace.automations:run-javascript",
+      "description": "Build a custom task running js Code",
+      "input": {
+        "script": "import { logsClient } from '@dynatrace-sdk/client-classic-environment-v2';\n\nfunction generateRandomData() {\n    // Function to generate a random productId     \n    function generateProductId() {\n        const products = [\"386SLB\", \"174DKR\", \"937FJS\", \"289ABN\", \"735DVE\", \"903ANY\", \"654DNG\"];\n        const SKU = products[Math.floor(Math.random() * products.length)];\n        return `${SKU}`;\n    }\n    // Function to generate a random number within a range\n    function generateRandomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1)) + min;\n    }\n\n    // Generate random data\n    const productQuantity = generateRandomNumber(1, 100);\n    const total = generateRandomNumber(10, 1000);\n    const sku = generateProductId();\n\n    // Create JSON object\n    const data = {\n       \"content\": 'The price of the product ' + sku + ' is $' + total ,\n        \"log.source\": '/var/open/syslog'\n    };\n\n    // Convert object to JSON\n    const jsonData = JSON.stringify(data);\n\n  // Print JSON to the console\nconsole.log(data)\n    //return jsonData\n  logsClient\n    .storeLog({\n    body: data,\n    type: 'application/json; charset=utf-8',\n    })\n    .then((response) => console.log('fin: ',response.body))\n    .catch((e) => console.error(e));\n}\n\n\n\n// Execute the function to generate random data\ngenerateRandomData();\n"
+      },
+      "position": {
+        "x": 0,
+        "y": 1
+      },
+      "predecessors": []
+    },
+    "run_javascript_2": {
+      "name": "run_javascript_2",
+      "action": "dynatrace.automations:run-javascript",
+      "description": "Build a custom task running js Code",
+      "input": {
+        "script": "import { logsClient } from '@dynatrace-sdk/client-classic-environment-v2';\n\nfunction generateRandomData() {\n    // Function to generate a random productId     \n    \n    function generateProductId() {\n        const products = [\"386SLB\", \"174DKR\", \"937FJS\", \"289ABN\", \"735DVE\", \"903ANY\", \"654DNG\"];\n        const SKU = products[Math.floor(Math.random() * products.length)];\n        return `${SKU}`;\n    }\n    // Function to generate a random number within a range\n    function generateRandomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1)) + min;\n    }\n\n    // Generate random data\n    const productQuantity = generateRandomNumber(1, 100);\n    const total = generateRandomNumber(10, 1000);\n    const sku = generateProductId();\n\n    // Create JSON object\n    const data = {\n       \"content\": 'The price of the product ' + sku + ' is $' + total ,\n        \"log.source\": '/var/open/syslog'\n    };\n\n    // Convert object to JSON\n    const jsonData = JSON.stringify(data);\n\n  // Print JSON to the console\nconsole.log(data)\n    //return jsonData\n  logsClient\n    .storeLog({\n    body: data,\n    type: 'application/json; charset=utf-8',\n    })\n    .then((response) => console.log('fin: ',response.body))\n    .catch((e) => console.error(e));\n}\n// Execute the function to generate random data\ngenerateRandomData();\n\n\n\n"
+      },
+      "position": {
+        "x": -1,
+        "y": 1
+      },
+      "predecessors": []
+    },
+    "run_javascript_3": {
+      "name": "run_javascript_3",
+      "action": "dynatrace.automations:run-javascript",
+      "description": "Build a custom task running js Code",
+      "input": {
+        "script": "import { logsClient } from '@dynatrace-sdk/client-classic-environment-v2';\n\nfunction generateRandomData() {\n    // Function to generate a random productId     \n    \n    function generateProductId() {\n        const products = [\"386SLB\", \"174DKR\", \"937FJS\", \"289ABN\", \"735DVE\", \"903ANY\", \"654DNG\"];\n        const SKU = products[Math.floor(Math.random() * products.length)];\n        return `${SKU}`;\n    }\n    // Function to generate a random number within a range\n    function generateRandomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1)) + min;\n    }\n\n    // Generate random data\n    const productQuantity = generateRandomNumber(1, 100);\n    const total = generateRandomNumber(10, 1000);\n    const sku = generateProductId();\n\n    // Create JSON object\n    const data = {\n       \"content\": 'The price of the product ' + sku + ' is $' + total ,\n        \"log.source\": '/var/open/syslog'\n    };\n\n    // Convert object to JSON\n    const jsonData = JSON.stringify(data);\n\n  // Print JSON to the console\nconsole.log(data)\n    //return jsonData\n  logsClient\n    .storeLog({\n    body: data,\n    type: 'application/json; charset=utf-8',\n    })\n    .then((response) => console.log('fin: ',response.body))\n    .catch((e) => console.error(e));\n}\n\n\n\n// Execute the function to generate random data\ngenerateRandomData();\n\n\n"
+      },
+      "position": {
+        "x": 0,
+        "y": 2
+      },
+      "predecessors": [
+        "run_javascript_1"
+      ],
+      "conditions": {
+        "states": {
+          "run_javascript_1": "OK"
+        }
+      }
+    },
+    "run_javascript_4": {
+      "name": "run_javascript_4",
+      "action": "dynatrace.automations:run-javascript",
+      "description": "Build a custom task running js Code",
+      "input": {
+        "script": "import { logsClient } from '@dynatrace-sdk/client-classic-environment-v2';\n\nfunction generateRandomData() {\n    // Function to generate a random productId     \n    \n    function generateProductId() {\n        const products = [\"386SLB\", \"174DKR\", \"937FJS\", \"289ABN\", \"735DVE\", \"903ANY\", \"654DNG\"];\n        const SKU = products[Math.floor(Math.random() * products.length)];\n        return `${SKU}`;\n    }\n    // Function to generate a random number within a range\n    function generateRandomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1)) + min;\n    }\n\n    // Generate random data\n    const productQuantity = generateRandomNumber(1, 100);\n    const total = generateRandomNumber(10, 1000);\n    const sku = generateProductId();\n\n    // Create JSON object\n    const data = {\n       \"content\": 'The price of the product ' + sku + ' is $' + total ,\n        \"log.source\": '/var/open/syslog'\n    };\n\n    // Convert object to JSON\n    const jsonData = JSON.stringify(data);\n\n  // Print JSON to the console\nconsole.log(data)\n    //return jsonData\n  logsClient\n    .storeLog({\n    body: data,\n    type: 'application/json; charset=utf-8',\n    })\n    .then((response) => console.log('fin: ',response.body))\n    .catch((e) => console.error(e));\n}\n\n\n\n// Execute the function to generate random data\ngenerateRandomData();\n"
+      },
+      "position": {
+        "x": -1,
+        "y": 2
+      },
+      "predecessors": [
+        "run_javascript_2"
+      ],
+      "conditions": {
+        "states": {
+          "run_javascript_2": "OK"
+        }
+      }
+    }
+  },
+  "description": "",
+  "ownerType": "USER",
+  "isPrivate": false,
+  "trigger": {
+    "schedule": {
+      "isActive": true,
+      "isFaulty": false,
+      "trigger": {
+        "type": "interval",
+        "intervalMinutes": 3
+      },
+      "rule": null,
+      "filterParameters": {
+        "earliestStart": "2024-07-16",
+        "earliestStartTime": "00:00"
+      },
+      "timezone": "America/Mexico_City",
+      "inputs": {},
+      "nextExecution": "2024-09-17T15:45:00.000Z"
+    }
+  },
+  "schemaVersion": 3
+}
