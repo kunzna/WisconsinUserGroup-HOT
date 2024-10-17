@@ -1,5 +1,7 @@
 kubectl delete ns easytrade
 kubectl create namespace easytrade
+
+cp /home/dtu_training/easytrade/kubernetes-manifests/ingress.yaml /home/dtu_training/WisconsinUserGroup-HOT/deployment/ingress.yaml
 kubectl -n easytrade apply -f ./deployment
 
 kubectl rollout status deployment -n easytrade --timeout=300s
