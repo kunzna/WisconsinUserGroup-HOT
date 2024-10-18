@@ -1,3 +1,6 @@
+# kubectl delete pod --all -n easytrade
+
+
 # Commands
 
 git clone https://github.com/kunzna/WisconsinUserGroup-HOT.git
